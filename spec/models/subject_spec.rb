@@ -4,6 +4,8 @@ RSpec.describe Subject, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:cohort) }
+
     end
 
     describe "InDirect Associations" do
