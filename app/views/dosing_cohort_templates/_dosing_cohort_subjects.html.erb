@@ -1,0 +1,37 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Subjects
+
+    <a data-toggle="collapse" href="#dosing_cohort_subjects_new_form">
+      Add subject
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @dosing_cohort.subjects.each do |subject| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/subjects/<%= subject.id %>">
+          <%= subject.cohort_id %>
+        </a>
+        <!-- Show link end -->
+
+        <!-- Delete link start -->
+        <a href="/delete_subject_from_cohort/<%= subject.id %>">
+          Delete
+        </a>
+        <!-- Delete link end -->
+
+      </li>
+    <% end %>
+
+    <div class="card-footer">
+      <div class="collapse" id="dosing_cohort_subjects_new_form">
+        <!-- New associationcollection form start -->
+
+        <!-- New associationcollection form end -->
+      </div>
+    </div>
+
+  </ul>
+</div>

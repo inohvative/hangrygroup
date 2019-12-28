@@ -53,6 +53,14 @@ class GlucoseLevelsController < ApplicationController
     end
   end
 
+  def destroy_row_from_subject
+    @glucose_level = GlucoseLevel.find(params.fetch("id_to_remove"))
+
+    @glucose_level.destroy
+
+    redirect_to("/subjects/#{@glucose_level.subject_id}", notice: "GlucoseLevel deleted successfully.")
+  end
+
   def destroy_row
     @glucose_level = GlucoseLevel.find(params.fetch("id_to_remove"))
 

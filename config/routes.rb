@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_insulin_bolu/:id_to_remove", { :controller => "insulin_bolus", :action => "destroy_row" })
+  get("/delete_insulin_bolu_from_subject/:id_to_remove", { :controller => "insulin_bolus", :action => "destroy_row_from_subject" })
 
   #------------------------------
 
@@ -36,6 +37,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_glucose_level/:id_to_remove", { :controller => "glucose_levels", :action => "destroy_row" })
+  get("/delete_glucose_level_from_subject/:id_to_remove", { :controller => "glucose_levels", :action => "destroy_row_from_subject" })
 
   #------------------------------
 
@@ -74,6 +76,7 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_subject/:id_to_remove", { :controller => "subjects", :action => "destroy_row" })
+  get("/delete_subject_from_cohort/:id_to_remove", { :controller => "subjects", :action => "destroy_row_from_cohort" })
 
   #------------------------------
 
@@ -112,6 +115,9 @@ Rails.application.routes.draw do
 
   # DELETE
   get("/delete_meal/:id_to_remove", { :controller => "meals", :action => "destroy_row" })
+  get("/delete_meal_from_insulinunits/:id_to_remove", { :controller => "meals", :action => "destroy_row_from_insulinunits" })
+  get("/delete_meal_from_glucoseleve/:id_to_remove", { :controller => "meals", :action => "destroy_row_from_glucoseleve" })
+  get("/delete_meal_from_mealtime/:id_to_remove", { :controller => "meals", :action => "destroy_row_from_mealtime" })
 
   #------------------------------
 

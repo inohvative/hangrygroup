@@ -61,6 +61,30 @@ class MealsController < ApplicationController
     end
   end
 
+  def destroy_row_from_mealtime
+    @meal = Meal.find(params.fetch("id_to_remove"))
+
+    @meal.destroy
+
+    redirect_to("/meal_times/#{@meal.mealtime_id}", notice: "Meal deleted successfully.")
+  end
+
+  def destroy_row_from_glucoseleve
+    @meal = Meal.find(params.fetch("id_to_remove"))
+
+    @meal.destroy
+
+    redirect_to("/glucose_levels/#{@meal.glucoselevel_id}", notice: "Meal deleted successfully.")
+  end
+
+  def destroy_row_from_insulinunits
+    @meal = Meal.find(params.fetch("id_to_remove"))
+
+    @meal.destroy
+
+    redirect_to("/insulin_bolus/#{@meal.insulinunits_id}", notice: "Meal deleted successfully.")
+  end
+
   def destroy_row
     @meal = Meal.find(params.fetch("id_to_remove"))
 

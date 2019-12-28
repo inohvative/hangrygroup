@@ -53,6 +53,14 @@ class SubjectsController < ApplicationController
     end
   end
 
+  def destroy_row_from_cohort
+    @subject = Subject.find(params.fetch("id_to_remove"))
+
+    @subject.destroy
+
+    redirect_to("/dosing_cohorts/#{@subject.cohort_id}", notice: "Subject deleted successfully.")
+  end
+
   def destroy_row
     @subject = Subject.find(params.fetch("id_to_remove"))
 

@@ -55,6 +55,14 @@ class InsulinBolusController < ApplicationController
     end
   end
 
+  def destroy_row_from_subject
+    @insulin_bolu = InsulinBolu.find(params.fetch("id_to_remove"))
+
+    @insulin_bolu.destroy
+
+    redirect_to("/subjects/#{@insulin_bolu.subject_id}", notice: "InsulinBolu deleted successfully.")
+  end
+
   def destroy_row
     @insulin_bolu = InsulinBolu.find(params.fetch("id_to_remove"))
 
