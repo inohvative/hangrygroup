@@ -36,7 +36,7 @@
     </label>
 
     <!-- Input for subject_id start -->
-    <input type="text" id="subject_id" name="subject_id" class="form-control" value="<%= @glucose_level.subject_id %>">
+    <%= select_tag(:subject_id, options_from_collection_for_select(Subject.all, :id, :cohort_id, @glucose_level.subject_id), :class => "form-control") %>
     <!-- Input for subject_id end -->
   </div>
   <!-- Label and input for subject_id end -->
