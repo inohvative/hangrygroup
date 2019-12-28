@@ -1,4 +1,6 @@
 ActiveAdmin.register Meal do
+
+ permit_params :name, :carbs_g, :mealtime_id, :glucoselevel_id, :insulinunits_id, :nurse_notes
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
