@@ -23,7 +23,7 @@ class SubjectsController < ApplicationController
     @subject = Subject.new
 
     @subject.cohort_id = params.fetch("cohort_id")
-    @subject.profilenotes = params.fetch("profilenotes")
+    @subject.profilenotes = params.fetch("profilenotes") if params.key?("profilenotes")
 
     if @subject.valid?
       @subject.save
@@ -38,7 +38,7 @@ class SubjectsController < ApplicationController
     @subject = Subject.new
 
     @subject.cohort_id = params.fetch("cohort_id")
-    @subject.profilenotes = params.fetch("profilenotes")
+    @subject.profilenotes = params.fetch("profilenotes") if params.key?("profilenotes")
 
     if @subject.valid?
       @subject.save
@@ -59,7 +59,7 @@ class SubjectsController < ApplicationController
     @subject = Subject.find(params.fetch("id_to_modify"))
 
     @subject.cohort_id = params.fetch("cohort_id")
-    @subject.profilenotes = params.fetch("profilenotes")
+    @subject.profilenotes = params.fetch("profilenotes") if params.key?("profilenotes")
 
     if @subject.valid?
       @subject.save

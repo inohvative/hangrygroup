@@ -20,7 +20,7 @@ class MealsController < ApplicationController
   def create_row
     @meal = Meal.new
 
-    @meal.name = params.fetch("name")
+    @meal.name = params.fetch("name") if params.key?("name")
     @meal.carbs_g = params.fetch("carbs_g")
     @meal.mealtime_id = params.fetch("mealtime_id")
     @meal.glucoselevel_id = params.fetch("glucoselevel_id")
@@ -39,7 +39,7 @@ class MealsController < ApplicationController
   def create_row_from_meal_time
     @meal = Meal.new
 
-    @meal.name = params.fetch("name")
+    @meal.name = params.fetch("name") if params.key?("name")
     @meal.carbs_g = params.fetch("carbs_g")
     @meal.mealtime_id = params.fetch("mealtime_id")
     @meal.glucoselevel_id = params.fetch("glucoselevel_id")
@@ -58,7 +58,7 @@ class MealsController < ApplicationController
   def create_row_from_glucose_level
     @meal = Meal.new
 
-    @meal.name = params.fetch("name")
+    @meal.name = params.fetch("name") if params.key?("name")
     @meal.carbs_g = params.fetch("carbs_g")
     @meal.mealtime_id = params.fetch("mealtime_id")
     @meal.glucoselevel_id = params.fetch("glucoselevel_id")
@@ -77,7 +77,7 @@ class MealsController < ApplicationController
   def create_row_from_insulin_bolu
     @meal = Meal.new
 
-    @meal.name = params.fetch("name")
+    @meal.name = params.fetch("name") if params.key?("name")
     @meal.carbs_g = params.fetch("carbs_g")
     @meal.mealtime_id = params.fetch("mealtime_id")
     @meal.glucoselevel_id = params.fetch("glucoselevel_id")
@@ -102,7 +102,7 @@ class MealsController < ApplicationController
   def update_row
     @meal = Meal.find(params.fetch("id_to_modify"))
 
-    @meal.name = params.fetch("name")
+    @meal.name = params.fetch("name") if params.key?("name")
     @meal.carbs_g = params.fetch("carbs_g")
     @meal.mealtime_id = params.fetch("mealtime_id")
     @meal.glucoselevel_id = params.fetch("glucoselevel_id")

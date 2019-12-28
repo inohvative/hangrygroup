@@ -1,4 +1,6 @@
 class Subject < ApplicationRecord
+  mount_uploader :profilenotes, ProfilenoteUploader
+
   # Direct associations
 
   has_many   :glucose_levels,

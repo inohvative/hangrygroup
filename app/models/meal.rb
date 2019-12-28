@@ -1,4 +1,6 @@
 class Meal < ApplicationRecord
+  mount_uploader :name, NameUploader
+
   # Direct associations
 
   belongs_to :insulinunits,

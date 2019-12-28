@@ -14,7 +14,7 @@
 <hr>
 
 <!-- Form subject start -->
-<form action="/update_subject/<%= @subject.id %>" method="post">
+<form action="/update_subject/<%= @subject.id %>" method="post" enctype="multipart/form-data">
 <!-- Form subject end -->
 
   <!-- Label and input for cohort_id start -->
@@ -36,7 +36,8 @@
     </label>
 
     <!-- Input for profilenotes start -->
-    <input type="text" id="profilenotes" name="profilenotes" class="form-control" value="<%= @subject.profilenotes %>">
+    <%= cl_image_tag(@subject.profilenotes.to_s, :width => 90, :height => 90, :crop => :thumb) %>
+    <input type="file" id="profilenotes" name="profilenotes" class="form-control">
     <!-- Input for profilenotes end -->
   </div>
   <!-- Label and input for profilenotes end -->

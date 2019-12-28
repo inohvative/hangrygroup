@@ -17,7 +17,7 @@
 <hr>
 
 <!-- Form subject start -->
-<form action="/create_subject" method="post">
+<form action="/create_subject" method="post" enctype="multipart/form-data">
 <!-- Form subject end -->
 
   <!-- Label and input for cohort_id start -->
@@ -39,7 +39,7 @@
     </label>
 
     <!-- Input for profilenotes start -->
-    <input type="text" id="profilenotes" name="profilenotes" class="form-control" value="<%= @subject.profilenotes %>">
+    <input type="file" id="profilenotes" name="profilenotes" class="form-control">
     <!-- Input for profilenotes end -->
   </div>
   <!-- Label and input for profilenotes end -->
