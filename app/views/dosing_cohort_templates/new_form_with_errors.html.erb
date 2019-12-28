@@ -1,0 +1,44 @@
+<!-- Validation failure messages -->
+<% if @dosing_cohort.present? %>
+  <% if @dosing_cohort.errors.any? %>
+    <% @dosing_cohort.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new dosing cohort
+</h1>
+
+
+<hr>
+
+<!-- Form dosing_cohort start -->
+<form action="/create_dosing_cohort" method="post">
+<!-- Form dosing_cohort end -->
+
+  <!-- Label and input for cohort_123 start -->
+  <div class="form-group">
+    <label for="cohort_123">
+      Cohort 123
+    </label>
+
+    <!-- Input for cohort_123 start -->
+    <input type="text" id="cohort_123" name="cohort_123" class="form-control" value="<%= @dosing_cohort.cohort_123 %>">
+    <!-- Input for cohort_123 end -->
+  </div>
+  <!-- Label and input for cohort_123 end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create dosing cohort
+  </button>
+</form>
+
+<hr>
+
+<a href="/dosing_cohorts">
+  Go back
+</a>

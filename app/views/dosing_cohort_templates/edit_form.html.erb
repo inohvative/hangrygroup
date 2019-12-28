@@ -1,0 +1,32 @@
+<h1>
+  Edit dosing cohort #<%= @dosing_cohort.id %>
+</h1>
+
+<hr>
+
+<!-- Form dosing_cohort start -->
+<form action="/update_dosing_cohort/<%= @dosing_cohort.id %>" method="post">
+<!-- Form dosing_cohort end -->
+
+  <!-- Label and input for cohort_123 start -->
+  <div class="form-group">
+    <label for="cohort_123">
+      Cohort 123
+    </label>
+
+    <!-- Input for cohort_123 start -->
+    <input type="text" id="cohort_123" name="cohort_123" class="form-control" value="<%= @dosing_cohort.cohort_123 %>">
+    <!-- Input for cohort_123 end -->
+  </div>
+  <!-- Label and input for cohort_123 end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update dosing cohort
+  </button>
+</form>
+
+<hr>
+
+<a href="/dosing_cohorts">
+  Go back
+</a>
