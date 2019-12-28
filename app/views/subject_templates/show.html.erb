@@ -1,0 +1,73 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Subject #<%= @subject.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/subjects" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link subject start -->
+      <div class="col">
+        <a href="/subjects/<%= @subject.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit subject
+        </a>
+      </div>
+      <!-- Edit link subject end -->
+
+      <!-- Delete link subject start -->
+      <div class="col">
+        <a href="/delete_subject/<%= @subject.id %>" class="btn btn-block btn-outline-secondary">
+          Delete subject
+        </a>
+      </div>
+      <!-- Delete link subject end -->
+    </div>
+
+    <dl>
+      <dt>
+        Cohort
+      </dt>
+      <!-- Display cohort_id start -->
+      <dd>
+        <%= @subject.cohort_id %>
+      </dd>
+      <!-- Display cohort_id end -->
+
+      <dt>
+        Profilenotes
+      </dt>
+      <!-- Display profilenotes start -->
+      <dd>
+        <%= @subject.profilenotes %>
+      </dd>
+      <!-- Display profilenotes end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@subject.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@subject.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

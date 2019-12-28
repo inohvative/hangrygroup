@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Subject resource:
+
+  # CREATE
+  get("/subjects/new", { :controller => "subjects", :action => "new_form" })
+  post("/create_subject", { :controller => "subjects", :action => "create_row" })
+
+  # READ
+  get("/subjects", { :controller => "subjects", :action => "index" })
+  get("/subjects/:id_to_display", { :controller => "subjects", :action => "show" })
+
+  # UPDATE
+  get("/subjects/:prefill_with_id/edit", { :controller => "subjects", :action => "edit_form" })
+  post("/update_subject/:id_to_modify", { :controller => "subjects", :action => "update_row" })
+
+  # DELETE
+  get("/delete_subject/:id_to_remove", { :controller => "subjects", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Dosing cohort resource:
 
   # CREATE

@@ -1,0 +1,56 @@
+<!-- Validation failure messages -->
+<% if @subject.present? %>
+  <% if @subject.errors.any? %>
+    <% @subject.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new subject
+</h1>
+
+
+<hr>
+
+<!-- Form subject start -->
+<form action="/create_subject" method="post">
+<!-- Form subject end -->
+
+  <!-- Label and input for cohort_id start -->
+  <div class="form-group">
+    <label for="cohort_id">
+      Cohort
+    </label>
+
+    <!-- Input for cohort_id start -->
+    <input type="text" id="cohort_id" name="cohort_id" class="form-control" value="<%= @subject.cohort_id %>">
+    <!-- Input for cohort_id end -->
+  </div>
+  <!-- Label and input for cohort_id end -->
+
+  <!-- Label and input for profilenotes start -->
+  <div class="form-group">
+    <label for="profilenotes">
+      Profilenotes
+    </label>
+
+    <!-- Input for profilenotes start -->
+    <input type="text" id="profilenotes" name="profilenotes" class="form-control" value="<%= @subject.profilenotes %>">
+    <!-- Input for profilenotes end -->
+  </div>
+  <!-- Label and input for profilenotes end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create subject
+  </button>
+</form>
+
+<hr>
+
+<a href="/subjects">
+  Go back
+</a>
