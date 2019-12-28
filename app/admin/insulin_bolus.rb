@@ -1,4 +1,6 @@
 ActiveAdmin.register InsulinBolu do
+
+ permit_params :name, :amount, :subject_id
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
