@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  ActiveAdmin.routes(self)
   root :to => "meals#index"
   # Routes for the Insulin bolu resource:
 
