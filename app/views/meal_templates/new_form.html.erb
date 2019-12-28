@@ -64,7 +64,7 @@
     </label>
 
     <!-- Input for insulinunits_id start -->
-    <input type="text" id="insulinunits_id" name="insulinunits_id" class="form-control">
+    <%= select_tag(:insulinunits_id, options_from_collection_for_select(InsulinBolu.all, :id, :name, @meal.insulinunits_id), :class => "form-control") %>
     <!-- Input for insulinunits_id end -->
   </div>
   <!-- Label and input for insulinunits_id end -->
