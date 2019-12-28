@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Meal time resource:
+
+  # CREATE
+  get("/meal_times/new", { :controller => "meal_times", :action => "new_form" })
+  post("/create_meal_time", { :controller => "meal_times", :action => "create_row" })
+
+  # READ
+  get("/meal_times", { :controller => "meal_times", :action => "index" })
+  get("/meal_times/:id_to_display", { :controller => "meal_times", :action => "show" })
+
+  # UPDATE
+  get("/meal_times/:prefill_with_id/edit", { :controller => "meal_times", :action => "edit_form" })
+  post("/update_meal_time/:id_to_modify", { :controller => "meal_times", :action => "update_row" })
+
+  # DELETE
+  get("/delete_meal_time/:id_to_remove", { :controller => "meal_times", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Subject resource:
 
   # CREATE
