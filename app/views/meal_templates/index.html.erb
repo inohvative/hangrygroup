@@ -86,19 +86,31 @@
 
         <!-- Display meal.mealtime_id start -->
         <td>
-          <%= meal.mealtime.name %>
+          <% if meal.mealtime.present? %>
+            <a href="/meal_times/<%= meal.mealtime.id %>">
+              <%= meal.mealtime.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display meal.mealtime_id end -->
 
         <!-- Display meal.glucoselevel_id start -->
         <td>
-          <%= meal.glucoseleve.glucose_level %>
+          <% if meal.glucoseleve.present? %>
+            <a href="/glucose_levels/<%= meal.glucoseleve.id %>">
+              <%= meal.glucoseleve.glucose_level %>
+            </a>
+          <% end %>
         </td>
         <!-- Display meal.glucoselevel_id end -->
 
         <!-- Display meal.insulinunits_id start -->
         <td>
-          <%= meal.insulinunits.name %>
+          <% if meal.insulinunits.present? %>
+            <a href="/insulin_bolus/<%= meal.insulinunits.id %>">
+              <%= meal.insulinunits.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display meal.insulinunits_id end -->
 

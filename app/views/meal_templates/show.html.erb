@@ -52,7 +52,11 @@
       </dt>
       <!-- Display mealtime_id start -->
       <dd>
-        <%= @meal.mealtime_id %>
+        <% if @meal.mealtime.present? %>
+          <a href="/meal_times/<%= @meal.mealtime_id %>">
+            <%= @meal.mealtime.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display mealtime_id end -->
 
@@ -61,7 +65,11 @@
       </dt>
       <!-- Display glucoselevel_id start -->
       <dd>
-        <%= @meal.glucoselevel_id %>
+        <% if @meal.glucoseleve.present? %>
+          <a href="/glucose_levels/<%= @meal.glucoselevel_id %>">
+            <%= @meal.glucoseleve.glucose_level %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display glucoselevel_id end -->
 
@@ -70,7 +78,11 @@
       </dt>
       <!-- Display insulinunits_id start -->
       <dd>
-        <%= @meal.insulinunits_id %>
+        <% if @meal.insulinunits.present? %>
+          <a href="/insulin_bolus/<%= @meal.insulinunits_id %>">
+            <%= @meal.insulinunits.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display insulinunits_id end -->
 

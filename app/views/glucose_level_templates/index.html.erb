@@ -64,7 +64,11 @@
 
         <!-- Display glucose_level.subject_id start -->
         <td>
-          <%= glucose_level.subject.cohort_id %>
+          <% if glucose_level.subject.present? %>
+            <a href="/subjects/<%= glucose_level.subject.id %>">
+              <%= glucose_level.subject.cohort_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display glucose_level.subject_id end -->
 

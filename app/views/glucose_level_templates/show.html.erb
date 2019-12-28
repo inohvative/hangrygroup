@@ -43,7 +43,11 @@
       </dt>
       <!-- Display subject_id start -->
       <dd>
-        <%= @glucose_level.subject_id %>
+        <% if @glucose_level.subject.present? %>
+          <a href="/subjects/<%= @glucose_level.subject_id %>">
+            <%= @glucose_level.subject.cohort_id %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display subject_id end -->
 

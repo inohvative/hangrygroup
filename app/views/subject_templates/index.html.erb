@@ -58,7 +58,11 @@
 
         <!-- Display subject.cohort_id start -->
         <td>
-          <%= subject.cohort.cohort_123 %>
+          <% if subject.cohort.present? %>
+            <a href="/dosing_cohorts/<%= subject.cohort.id %>">
+              <%= subject.cohort.cohort_123 %>
+            </a>
+          <% end %>
         </td>
         <!-- Display subject.cohort_id end -->
 

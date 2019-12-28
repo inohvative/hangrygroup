@@ -74,7 +74,11 @@
 
         <!-- Display insulin_bolu.subject_id start -->
         <td>
-          <%= insulin_bolu.subject.cohort_id %>
+          <% if insulin_bolu.subject.present? %>
+            <a href="/subjects/<%= insulin_bolu.subject.id %>">
+              <%= insulin_bolu.subject.cohort_id %>
+            </a>
+          <% end %>
         </td>
         <!-- Display insulin_bolu.subject_id end -->
 

@@ -52,7 +52,11 @@
       </dt>
       <!-- Display subject_id start -->
       <dd>
-        <%= @insulin_bolu.subject_id %>
+        <% if @insulin_bolu.subject.present? %>
+          <a href="/subjects/<%= @insulin_bolu.subject_id %>">
+            <%= @insulin_bolu.subject.cohort_id %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display subject_id end -->
 

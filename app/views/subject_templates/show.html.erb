@@ -34,7 +34,11 @@
       </dt>
       <!-- Display cohort_id start -->
       <dd>
-        <%= @subject.cohort_id %>
+        <% if @subject.cohort.present? %>
+          <a href="/dosing_cohorts/<%= @subject.cohort_id %>">
+            <%= @subject.cohort.cohort_123 %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display cohort_id end -->
 
