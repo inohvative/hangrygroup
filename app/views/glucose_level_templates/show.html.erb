@@ -1,0 +1,73 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Glucose level #<%= @glucose_level.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/glucose_levels" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link glucose_level start -->
+      <div class="col">
+        <a href="/glucose_levels/<%= @glucose_level.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit glucose level
+        </a>
+      </div>
+      <!-- Edit link glucose_level end -->
+
+      <!-- Delete link glucose_level start -->
+      <div class="col">
+        <a href="/delete_glucose_level/<%= @glucose_level.id %>" class="btn btn-block btn-outline-secondary">
+          Delete glucose level
+        </a>
+      </div>
+      <!-- Delete link glucose_level end -->
+    </div>
+
+    <dl>
+      <dt>
+        Glucose level
+      </dt>
+      <!-- Display glucose_level start -->
+      <dd>
+        <%= @glucose_level.glucose_level %>
+      </dd>
+      <!-- Display glucose_level end -->
+
+      <dt>
+        Subject
+      </dt>
+      <!-- Display subject_id start -->
+      <dd>
+        <%= @glucose_level.subject_id %>
+      </dd>
+      <!-- Display subject_id end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@glucose_level.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@glucose_level.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

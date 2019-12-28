@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Glucose level resource:
+
+  # CREATE
+  get("/glucose_levels/new", { :controller => "glucose_levels", :action => "new_form" })
+  post("/create_glucose_level", { :controller => "glucose_levels", :action => "create_row" })
+
+  # READ
+  get("/glucose_levels", { :controller => "glucose_levels", :action => "index" })
+  get("/glucose_levels/:id_to_display", { :controller => "glucose_levels", :action => "show" })
+
+  # UPDATE
+  get("/glucose_levels/:prefill_with_id/edit", { :controller => "glucose_levels", :action => "edit_form" })
+  post("/update_glucose_level/:id_to_modify", { :controller => "glucose_levels", :action => "update_row" })
+
+  # DELETE
+  get("/delete_glucose_level/:id_to_remove", { :controller => "glucose_levels", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Meal time resource:
 
   # CREATE
