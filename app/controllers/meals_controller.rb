@@ -36,6 +36,63 @@ class MealsController < ApplicationController
     end
   end
 
+  def create_row_from_meal_time
+    @meal = Meal.new
+
+    @meal.name = params.fetch("name")
+    @meal.carbs_g = params.fetch("carbs_g")
+    @meal.mealtime_id = params.fetch("mealtime_id")
+    @meal.glucoselevel_id = params.fetch("glucoselevel_id")
+    @meal.insulinunits_id = params.fetch("insulinunits_id")
+    @meal.nurse_notes = params.fetch("nurse_notes")
+
+    if @meal.valid?
+      @meal.save
+
+      redirect_to("/meal_times/#{@meal.mealtime_id}", notice: "Meal created successfully.")
+    else
+      render("meal_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_glucose_level
+    @meal = Meal.new
+
+    @meal.name = params.fetch("name")
+    @meal.carbs_g = params.fetch("carbs_g")
+    @meal.mealtime_id = params.fetch("mealtime_id")
+    @meal.glucoselevel_id = params.fetch("glucoselevel_id")
+    @meal.insulinunits_id = params.fetch("insulinunits_id")
+    @meal.nurse_notes = params.fetch("nurse_notes")
+
+    if @meal.valid?
+      @meal.save
+
+      redirect_to("/glucose_levels/#{@meal.glucoselevel_id}", notice: "Meal created successfully.")
+    else
+      render("meal_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_insulin_bolu
+    @meal = Meal.new
+
+    @meal.name = params.fetch("name")
+    @meal.carbs_g = params.fetch("carbs_g")
+    @meal.mealtime_id = params.fetch("mealtime_id")
+    @meal.glucoselevel_id = params.fetch("glucoselevel_id")
+    @meal.insulinunits_id = params.fetch("insulinunits_id")
+    @meal.nurse_notes = params.fetch("nurse_notes")
+
+    if @meal.valid?
+      @meal.save
+
+      redirect_to("/insulin_bolus/#{@meal.insulinunits_id}", notice: "Meal created successfully.")
+    else
+      render("meal_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @meal = Meal.find(params.fetch("prefill_with_id"))
 

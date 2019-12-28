@@ -6,6 +6,7 @@ class GlucoseLevelsController < ApplicationController
   end
 
   def show
+    @meal = Meal.new
     @glucose_level = GlucoseLevel.find(params.fetch("id_to_display"))
 
     render("glucose_level_templates/show.html.erb")
@@ -27,6 +28,21 @@ class GlucoseLevelsController < ApplicationController
       @glucose_level.save
 
       redirect_back(:fallback_location => "/glucose_levels", :notice => "Glucose level created successfully.")
+    else
+      render("glucose_level_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_subject
+    @glucose_level = GlucoseLevel.new
+
+    @glucose_level.glucose_level = params.fetch("glucose_level")
+    @glucose_level.subject_id = params.fetch("subject_id")
+
+    if @glucose_level.valid?
+      @glucose_level.save
+
+      redirect_to("/subjects/#{@glucose_level.subject_id}", notice: "GlucoseLevel created successfully.")
     else
       render("glucose_level_templates/new_form_with_errors.html.erb")
     end

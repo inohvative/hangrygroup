@@ -1,0 +1,25 @@
+<!-- Form glucose_level start -->
+<form action="/create_glucose_level_from_subject" method="post">
+<!-- Form glucose_level end -->
+
+  <!-- Label and input for glucose_level start -->
+  <div class="form-group">
+    <label for="glucose_level">
+      Glucose level
+    </label>
+
+    <!-- Input for glucose_level start -->
+    <input type="text" id="glucose_level" name="glucose_level" class="form-control" value="<%= @glucose_level.glucose_level %>">
+    <!-- Input for glucose_level end -->
+  </div>
+  <!-- Label and input for glucose_level end -->
+
+  <!-- Label and input for subject_id start -->
+  <!-- Input for subject_id start -->
+  <input type="hidden" name="subject_id" value="<%= @subject.id %>">
+  <!-- Input for subject_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create glucose level
+  </button>
+</form>

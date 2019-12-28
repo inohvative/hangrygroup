@@ -1,0 +1,37 @@
+<!-- Form insulin_bolu start -->
+<form action="/create_insulin_bolu_from_subject" method="post">
+<!-- Form insulin_bolu end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <!-- Input for name start -->
+    <input type="text" id="name" name="name" class="form-control" value="<%= @insulin_bolu.name %>">
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <!-- Label and input for amount start -->
+  <div class="form-group">
+    <label for="amount">
+      Amount
+    </label>
+
+    <!-- Input for amount start -->
+    <input type="text" id="amount" name="amount" class="form-control" value="<%= @insulin_bolu.amount %>">
+    <!-- Input for amount end -->
+  </div>
+  <!-- Label and input for amount end -->
+
+  <!-- Label and input for subject_id start -->
+  <!-- Input for subject_id start -->
+  <input type="hidden" name="subject_id" value="<%= @subject.id %>">
+  <!-- Input for subject_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create insulin bolu
+  </button>
+</form>

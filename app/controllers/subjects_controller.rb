@@ -6,6 +6,8 @@ class SubjectsController < ApplicationController
   end
 
   def show
+    @glucose_level = GlucoseLevel.new
+    @insulin_bolu = InsulinBolu.new
     @subject = Subject.find(params.fetch("id_to_display"))
 
     render("subject_templates/show.html.erb")
@@ -27,6 +29,21 @@ class SubjectsController < ApplicationController
       @subject.save
 
       redirect_back(:fallback_location => "/subjects", :notice => "Subject created successfully.")
+    else
+      render("subject_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_dosing_cohort
+    @subject = Subject.new
+
+    @subject.cohort_id = params.fetch("cohort_id")
+    @subject.profilenotes = params.fetch("profilenotes")
+
+    if @subject.valid?
+      @subject.save
+
+      redirect_to("/dosing_cohorts/#{@subject.cohort_id}", notice: "Subject created successfully.")
     else
       render("subject_templates/new_form_with_errors.html.erb")
     end

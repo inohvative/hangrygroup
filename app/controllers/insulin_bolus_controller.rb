@@ -6,6 +6,7 @@ class InsulinBolusController < ApplicationController
   end
 
   def show
+    @meal = Meal.new
     @insulin_bolu = InsulinBolu.find(params.fetch("id_to_display"))
 
     render("insulin_bolu_templates/show.html.erb")
@@ -28,6 +29,22 @@ class InsulinBolusController < ApplicationController
       @insulin_bolu.save
 
       redirect_back(:fallback_location => "/insulin_bolus", :notice => "Insulin bolu created successfully.")
+    else
+      render("insulin_bolu_templates/new_form_with_errors.html.erb")
+    end
+  end
+
+  def create_row_from_subject
+    @insulin_bolu = InsulinBolu.new
+
+    @insulin_bolu.name = params.fetch("name")
+    @insulin_bolu.amount = params.fetch("amount")
+    @insulin_bolu.subject_id = params.fetch("subject_id")
+
+    if @insulin_bolu.valid?
+      @insulin_bolu.save
+
+      redirect_to("/subjects/#{@insulin_bolu.subject_id}", notice: "InsulinBolu created successfully.")
     else
       render("insulin_bolu_templates/new_form_with_errors.html.erb")
     end

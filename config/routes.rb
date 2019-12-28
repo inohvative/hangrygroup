@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/insulin_bolus/new", { :controller => "insulin_bolus", :action => "new_form" })
   post("/create_insulin_bolu", { :controller => "insulin_bolus", :action => "create_row" })
+  post("/create_insulin_bolu_from_subject", { :controller => "insulin_bolus", :action => "create_row_from_subject" })
 
   # READ
   get("/insulin_bolus", { :controller => "insulin_bolus", :action => "index" })
@@ -26,6 +27,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/glucose_levels/new", { :controller => "glucose_levels", :action => "new_form" })
   post("/create_glucose_level", { :controller => "glucose_levels", :action => "create_row" })
+  post("/create_glucose_level_from_subject", { :controller => "glucose_levels", :action => "create_row_from_subject" })
 
   # READ
   get("/glucose_levels", { :controller => "glucose_levels", :action => "index" })
@@ -65,6 +67,7 @@ Rails.application.routes.draw do
   # CREATE
   get("/subjects/new", { :controller => "subjects", :action => "new_form" })
   post("/create_subject", { :controller => "subjects", :action => "create_row" })
+  post("/create_subject_from_dosing_cohort", { :controller => "subjects", :action => "create_row_from_dosing_cohort" })
 
   # READ
   get("/subjects", { :controller => "subjects", :action => "index" })
@@ -104,6 +107,9 @@ Rails.application.routes.draw do
   # CREATE
   get("/meals/new", { :controller => "meals", :action => "new_form" })
   post("/create_meal", { :controller => "meals", :action => "create_row" })
+  post("/create_meal_from_insulin_bolu", { :controller => "meals", :action => "create_row_from_insulin_bolu" })
+  post("/create_meal_from_glucose_level", { :controller => "meals", :action => "create_row_from_glucose_level" })
+  post("/create_meal_from_meal_time", { :controller => "meals", :action => "create_row_from_meal_time" })
 
   # READ
   get("/meals", { :controller => "meals", :action => "index" })

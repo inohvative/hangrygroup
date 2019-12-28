@@ -1,0 +1,25 @@
+<!-- Form subject start -->
+<form action="/create_subject_from_dosing_cohort" method="post">
+<!-- Form subject end -->
+
+  <!-- Label and input for cohort_id start -->
+  <!-- Input for cohort_id start -->
+  <input type="hidden" name="cohort_id" value="<%= @dosing_cohort.id %>">
+  <!-- Input for cohort_id end -->
+
+  <!-- Label and input for profilenotes start -->
+  <div class="form-group">
+    <label for="profilenotes">
+      Profilenotes
+    </label>
+
+    <!-- Input for profilenotes start -->
+    <input type="text" id="profilenotes" name="profilenotes" class="form-control" value="<%= @subject.profilenotes %>">
+    <!-- Input for profilenotes end -->
+  </div>
+  <!-- Label and input for profilenotes end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create subject
+  </button>
+</form>

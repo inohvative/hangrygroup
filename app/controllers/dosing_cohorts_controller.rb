@@ -6,6 +6,7 @@ class DosingCohortsController < ApplicationController
   end
 
   def show
+    @subject = Subject.new
     @dosing_cohort = DosingCohort.find(params.fetch("id_to_display"))
 
     render("dosing_cohort_templates/show.html.erb")
