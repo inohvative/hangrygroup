@@ -11,37 +11,30 @@
         </a>
       </div>
 
-      <!-- Edit link glucose_level start -->
       <div class="col">
         <a href="/glucose_levels/<%= @glucose_level.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit glucose level
         </a>
       </div>
-      <!-- Edit link glucose_level end -->
 
-      <!-- Delete link glucose_level start -->
       <div class="col">
         <a href="/delete_glucose_level/<%= @glucose_level.id %>" class="btn btn-block btn-outline-secondary">
           Delete glucose level
         </a>
       </div>
-      <!-- Delete link glucose_level end -->
     </div>
 
     <dl>
       <dt>
         Glucose level
       </dt>
-      <!-- Display glucose_level start -->
       <dd>
         <%= @glucose_level.glucose_level %>
       </dd>
-      <!-- Display glucose_level end -->
 
       <dt>
         Subject
       </dt>
-      <!-- Display subject_id start -->
       <dd>
         <% if @glucose_level.subject.present? %>
           <a href="/subjects/<%= @glucose_level.subject_id %>">
@@ -49,33 +42,26 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display subject_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@glucose_level.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@glucose_level.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "glucose_level_templates/glucose_level_meals" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

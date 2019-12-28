@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @glucose_level.meals.each do |meal| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/meals/<%= meal.id %>">
           <%= meal.name %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_meal_from_glucoseleve/<%= meal.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="glucose_level_meals_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "glucose_level_templates/glucose_level_meals_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

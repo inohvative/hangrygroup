@@ -1,71 +1,46 @@
-<!-- Form meal start -->
 <form action="/create_meal" method="post" enctype="multipart/form-data">
-<!-- Form meal end -->
 
-  <!-- Label and input for name start -->
   <div class="form-group">
     <label for="name">
       Name
     </label>
 
-    <!-- Input for name start -->
     <input type="file" id="name" name="name" class="form-control">
-    <!-- Input for name end -->
   </div>
-  <!-- Label and input for name end -->
 
-  <!-- Label and input for carbs_g start -->
   <div class="form-group">
     <label for="carbs_g">
       Carbs g
     </label>
 
-    <!-- Input for carbs_g start -->
     <input type="text" id="carbs_g" name="carbs_g" class="form-control" value="<%= @meal.carbs_g %>">
-    <!-- Input for carbs_g end -->
   </div>
-  <!-- Label and input for carbs_g end -->
 
-  <!-- Label and input for mealtime_id start -->
-  <!-- Input for mealtime_id start -->
   <input type="hidden" name="mealtime_id" value="<%= @meal_time.id %>">
-  <!-- Input for mealtime_id end -->
 
-  <!-- Label and input for glucoselevel_id start -->
   <div class="form-group">
     <label for="glucoselevel_id">
       Glucoselevel
     </label>
 
-    <!-- Input for glucoselevel_id start -->
     <%= select_tag(:glucoselevel_id, options_from_collection_for_select(GlucoseLevel.all, :id, :glucose_level, @meal.glucoselevel_id), :class => "form-control") %>
-    <!-- Input for glucoselevel_id end -->
   </div>
-  <!-- Label and input for glucoselevel_id end -->
 
-  <!-- Label and input for insulinunits_id start -->
   <div class="form-group">
     <label for="insulinunits_id">
       Insulinunits
     </label>
 
-    <!-- Input for insulinunits_id start -->
     <%= select_tag(:insulinunits_id, options_from_collection_for_select(InsulinBolu.all, :id, :name, @meal.insulinunits_id), :class => "form-control") %>
-    <!-- Input for insulinunits_id end -->
   </div>
-  <!-- Label and input for insulinunits_id end -->
 
-  <!-- Label and input for nurse_notes start -->
   <div class="form-group">
     <label for="nurse_notes">
       Nurse notes
     </label>
 
-    <!-- Input for nurse_notes start -->
     <input type="text" id="nurse_notes" name="nurse_notes" class="form-control" value="<%= @meal.nurse_notes %>">
-    <!-- Input for nurse_notes end -->
   </div>
-  <!-- Label and input for nurse_notes end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create meal

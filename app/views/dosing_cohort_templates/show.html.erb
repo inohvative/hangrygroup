@@ -11,58 +11,46 @@
         </a>
       </div>
 
-      <!-- Edit link dosing_cohort start -->
       <div class="col">
         <a href="/dosing_cohorts/<%= @dosing_cohort.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit dosing cohort
         </a>
       </div>
-      <!-- Edit link dosing_cohort end -->
 
-      <!-- Delete link dosing_cohort start -->
       <div class="col">
         <a href="/delete_dosing_cohort/<%= @dosing_cohort.id %>" class="btn btn-block btn-outline-secondary">
           Delete dosing cohort
         </a>
       </div>
-      <!-- Delete link dosing_cohort end -->
     </div>
 
     <dl>
       <dt>
         Cohort 123
       </dt>
-      <!-- Display cohort_123 start -->
       <dd>
         <%= @dosing_cohort.cohort_123 %>
       </dd>
-      <!-- Display cohort_123 end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@dosing_cohort.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@dosing_cohort.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "dosing_cohort_templates/dosing_cohort_subjects" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

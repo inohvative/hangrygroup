@@ -11,58 +11,46 @@
         </a>
       </div>
 
-      <!-- Edit link meal_time start -->
       <div class="col">
         <a href="/meal_times/<%= @meal_time.id %>/edit" class="btn btn-block btn-outline-secondary">
           Edit meal time
         </a>
       </div>
-      <!-- Edit link meal_time end -->
 
-      <!-- Delete link meal_time start -->
       <div class="col">
         <a href="/delete_meal_time/<%= @meal_time.id %>" class="btn btn-block btn-outline-secondary">
           Delete meal time
         </a>
       </div>
-      <!-- Delete link meal_time end -->
     </div>
 
     <dl>
       <dt>
         Name
       </dt>
-      <!-- Display name start -->
       <dd>
         <%= @meal_time.name %>
       </dd>
-      <!-- Display name end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@meal_time.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@meal_time.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
 <div class="row mb-3">
   <div class="col-md-8 offset-md-2">
     <%= render partial: "meal_time_templates/meal_time_meals" %>
   </div>
 </div>
-<!-- Show Page Customization end -->

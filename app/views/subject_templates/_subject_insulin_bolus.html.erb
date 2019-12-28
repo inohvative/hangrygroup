@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @subject.insulin_bolus.each do |insulin_bolu| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/insulin_bolus/<%= insulin_bolu.id %>">
           <%= insulin_bolu.name %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_insulin_bolu_from_subject/<%= insulin_bolu.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="subject_insulin_bolus_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "subject_templates/subject_insulin_bolus_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

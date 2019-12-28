@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @subject.errors.any? %>
   <% @subject.errors.full_messages.each do |message| %>
     <div class="alert">
@@ -13,34 +12,24 @@
 
 <hr>
 
-<!-- Form subject start -->
 <form action="/update_subject/<%= @subject.id %>" method="post" enctype="multipart/form-data">
-<!-- Form subject end -->
 
-  <!-- Label and input for cohort_id start -->
   <div class="form-group">
     <label for="cohort_id">
       Cohort
     </label>
 
-    <!-- Input for cohort_id start -->
     <%= select_tag(:cohort_id, options_from_collection_for_select(DosingCohort.all, :id, :cohort_123, @subject.cohort_id), :class => "form-control") %>
-    <!-- Input for cohort_id end -->
   </div>
-  <!-- Label and input for cohort_id end -->
 
-  <!-- Label and input for profilenotes start -->
   <div class="form-group">
     <label for="profilenotes">
       Profilenotes
     </label>
 
-    <!-- Input for profilenotes start -->
     <%= cl_image_tag(@subject.profilenotes.to_s, :width => 90, :height => 90, :crop => :thumb) %>
     <input type="file" id="profilenotes" name="profilenotes" class="form-control">
-    <!-- Input for profilenotes end -->
   </div>
-  <!-- Label and input for profilenotes end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update subject

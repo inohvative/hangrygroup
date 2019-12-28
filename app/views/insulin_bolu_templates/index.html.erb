@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "insulin_bolu_templates/insulin_bolus_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -58,25 +54,18 @@
 
       <% @insulin_bolus.each do |insulin_bolu| %>
       <tr>
-        <!-- Display insulin_bolu.id start -->
         <td>
           <%= insulin_bolu.id %>
         </td>
-        <!-- Display insulin_bolu.id end -->
 
-        <!-- Display insulin_bolu.name start -->
         <td>
           <%= insulin_bolu.name %>
         </td>
-        <!-- Display insulin_bolu.name end -->
 
-        <!-- Display insulin_bolu.amount start -->
         <td>
           <%= insulin_bolu.amount %>
         </td>
-        <!-- Display insulin_bolu.amount end -->
 
-        <!-- Display insulin_bolu.subject_id start -->
         <td>
           <% if insulin_bolu.subject.present? %>
             <a href="/subjects/<%= insulin_bolu.subject.id %>">
@@ -84,19 +73,14 @@
             </a>
           <% end %>
         </td>
-        <!-- Display insulin_bolu.subject_id end -->
 
-        <!-- Display insulin_bolu.created_at start -->
         <td>
           <%= time_ago_in_words(insulin_bolu.created_at) %> ago
         </td>
-        <!-- Display insulin_bolu.created_at end -->
 
-        <!-- Display insulin_bolu.updated_at start -->
         <td>
           <%= time_ago_in_words(insulin_bolu.updated_at) %> ago
         </td>
-        <!-- Display insulin_bolu.updated_at end -->
 
         <td>
           <a href="/insulin_bolus/<%= insulin_bolu.id %>">

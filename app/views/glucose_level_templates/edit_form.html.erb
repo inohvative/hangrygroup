@@ -4,33 +4,23 @@
 
 <hr>
 
-<!-- Form glucose_level start -->
 <form action="/update_glucose_level/<%= @glucose_level.id %>" method="post">
-<!-- Form glucose_level end -->
 
-  <!-- Label and input for glucose_level start -->
   <div class="form-group">
     <label for="glucose_level">
       Glucose level
     </label>
 
-    <!-- Input for glucose_level start -->
     <input type="text" id="glucose_level" name="glucose_level" class="form-control" value="<%= @glucose_level.glucose_level %>">
-    <!-- Input for glucose_level end -->
   </div>
-  <!-- Label and input for glucose_level end -->
 
-  <!-- Label and input for subject_id start -->
   <div class="form-group">
     <label for="subject_id">
       Subject
     </label>
 
-    <!-- Input for subject_id start -->
     <%= select_tag(:subject_id, options_from_collection_for_select(Subject.all, :id, :cohort_id, @glucose_level.subject_id), :class => "form-control") %>
-    <!-- Input for subject_id end -->
   </div>
-  <!-- Label and input for subject_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Update glucose level

@@ -1,4 +1,3 @@
-<!-- Validation failure messages -->
 <% if @insulin_bolu.present? %>
   <% if @insulin_bolu.errors.any? %>
     <% @insulin_bolu.errors.full_messages.each do |message| %>
@@ -16,45 +15,31 @@
 
 <hr>
 
-<!-- Form insulin_bolu start -->
 <form action="/create_insulin_bolu" method="post">
-<!-- Form insulin_bolu end -->
 
-  <!-- Label and input for name start -->
   <div class="form-group">
     <label for="name">
       Name
     </label>
 
-    <!-- Input for name start -->
     <input type="text" id="name" name="name" class="form-control" value="<%= @insulin_bolu.name %>">
-    <!-- Input for name end -->
   </div>
-  <!-- Label and input for name end -->
 
-  <!-- Label and input for amount start -->
   <div class="form-group">
     <label for="amount">
       Amount
     </label>
 
-    <!-- Input for amount start -->
     <input type="text" id="amount" name="amount" class="form-control" value="<%= @insulin_bolu.amount %>">
-    <!-- Input for amount end -->
   </div>
-  <!-- Label and input for amount end -->
 
-  <!-- Label and input for subject_id start -->
   <div class="form-group">
     <label for="subject_id">
       Subject
     </label>
 
-    <!-- Input for subject_id start -->
     <%= select_tag(:subject_id, options_from_collection_for_select(Subject.all, :id, :cohort_id, @insulin_bolu.subject_id), :class => "form-control") %>
-    <!-- Input for subject_id end -->
   </div>
-  <!-- Label and input for subject_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create insulin bolu

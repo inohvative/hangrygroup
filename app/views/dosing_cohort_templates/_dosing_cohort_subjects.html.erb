@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @dosing_cohort.subjects.each do |subject| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/subjects/<%= subject.id %>">
           <%= subject.cohort_id %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_subject_from_cohort/<%= subject.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="dosing_cohort_subjects_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "dosing_cohort_templates/dosing_cohort_subjects_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 
