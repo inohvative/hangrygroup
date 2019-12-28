@@ -1,0 +1,101 @@
+<!-- Validation failure messages -->
+<% if @meal.errors.any? %>
+  <% @meal.errors.full_messages.each do |message| %>
+    <div class="alert">
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<h1>
+  Edit meal #<%= @meal.id %>
+</h1>
+
+<hr>
+
+<!-- Form meal start -->
+<form action="/update_meal/<%= @meal.id %>" method="post">
+<!-- Form meal end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <!-- Input for name start -->
+    <input type="text" id="name" name="name" class="form-control" value="<%= @meal.name %>">
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <!-- Label and input for carbs_g start -->
+  <div class="form-group">
+    <label for="carbs_g">
+      Carbs g
+    </label>
+
+    <!-- Input for carbs_g start -->
+    <input type="text" id="carbs_g" name="carbs_g" class="form-control" value="<%= @meal.carbs_g %>">
+    <!-- Input for carbs_g end -->
+  </div>
+  <!-- Label and input for carbs_g end -->
+
+  <!-- Label and input for mealtime_id start -->
+  <div class="form-group">
+    <label for="mealtime_id">
+      Mealtime
+    </label>
+
+    <!-- Input for mealtime_id start -->
+    <input type="text" id="mealtime_id" name="mealtime_id" class="form-control" value="<%= @meal.mealtime_id %>">
+    <!-- Input for mealtime_id end -->
+  </div>
+  <!-- Label and input for mealtime_id end -->
+
+  <!-- Label and input for glucoselevel_id start -->
+  <div class="form-group">
+    <label for="glucoselevel_id">
+      Glucoselevel
+    </label>
+
+    <!-- Input for glucoselevel_id start -->
+    <input type="text" id="glucoselevel_id" name="glucoselevel_id" class="form-control" value="<%= @meal.glucoselevel_id %>">
+    <!-- Input for glucoselevel_id end -->
+  </div>
+  <!-- Label and input for glucoselevel_id end -->
+
+  <!-- Label and input for insulinunits_id start -->
+  <div class="form-group">
+    <label for="insulinunits_id">
+      Insulinunits
+    </label>
+
+    <!-- Input for insulinunits_id start -->
+    <input type="text" id="insulinunits_id" name="insulinunits_id" class="form-control" value="<%= @meal.insulinunits_id %>">
+    <!-- Input for insulinunits_id end -->
+  </div>
+  <!-- Label and input for insulinunits_id end -->
+
+  <!-- Label and input for nurse_notes start -->
+  <div class="form-group">
+    <label for="nurse_notes">
+      Nurse notes
+    </label>
+
+    <!-- Input for nurse_notes start -->
+    <input type="text" id="nurse_notes" name="nurse_notes" class="form-control" value="<%= @meal.nurse_notes %>">
+    <!-- Input for nurse_notes end -->
+  </div>
+  <!-- Label and input for nurse_notes end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update meal
+  </button>
+</form>
+
+<hr>
+
+<a href="/meals">
+  Go back
+</a>

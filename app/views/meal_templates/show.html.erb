@@ -1,0 +1,109 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Meal #<%= @meal.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/meals" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link meal start -->
+      <div class="col">
+        <a href="/meals/<%= @meal.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit meal
+        </a>
+      </div>
+      <!-- Edit link meal end -->
+
+      <!-- Delete link meal start -->
+      <div class="col">
+        <a href="/delete_meal/<%= @meal.id %>" class="btn btn-block btn-outline-secondary">
+          Delete meal
+        </a>
+      </div>
+      <!-- Delete link meal end -->
+    </div>
+
+    <dl>
+      <dt>
+        Name
+      </dt>
+      <!-- Display name start -->
+      <dd>
+        <%= @meal.name %>
+      </dd>
+      <!-- Display name end -->
+
+      <dt>
+        Carbs g
+      </dt>
+      <!-- Display carbs_g start -->
+      <dd>
+        <%= @meal.carbs_g %>
+      </dd>
+      <!-- Display carbs_g end -->
+
+      <dt>
+        Mealtime
+      </dt>
+      <!-- Display mealtime_id start -->
+      <dd>
+        <%= @meal.mealtime_id %>
+      </dd>
+      <!-- Display mealtime_id end -->
+
+      <dt>
+        Glucoselevel
+      </dt>
+      <!-- Display glucoselevel_id start -->
+      <dd>
+        <%= @meal.glucoselevel_id %>
+      </dd>
+      <!-- Display glucoselevel_id end -->
+
+      <dt>
+        Insulinunits
+      </dt>
+      <!-- Display insulinunits_id start -->
+      <dd>
+        <%= @meal.insulinunits_id %>
+      </dd>
+      <!-- Display insulinunits_id end -->
+
+      <dt>
+        Nurse notes
+      </dt>
+      <!-- Display nurse_notes start -->
+      <dd>
+        <%= @meal.nurse_notes %>
+      </dd>
+      <!-- Display nurse_notes end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@meal.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@meal.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->
