@@ -1,6 +1,7 @@
 class InsulinBolusController < ApplicationController
   def index
-    @insulin_bolus = InsulinBolu.page(params[:page]).per(10)
+    @q = InsulinBolu.ransack(params[:q])
+    @insulin_bolus = @q.result(:distinct => true).includes(:subject, :meals).page(params[:page]).per(10)
 
     render("insulin_bolu_templates/index.html.erb")
   end

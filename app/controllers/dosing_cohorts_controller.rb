@@ -1,6 +1,7 @@
 class DosingCohortsController < ApplicationController
   def index
-    @dosing_cohorts = DosingCohort.page(params[:page]).per(10)
+    @q = DosingCohort.ransack(params[:q])
+    @dosing_cohorts = @q.result(:distinct => true).includes(:subjects).page(params[:page]).per(10)
 
     render("dosing_cohort_templates/index.html.erb")
   end

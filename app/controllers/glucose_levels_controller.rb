@@ -1,6 +1,7 @@
 class GlucoseLevelsController < ApplicationController
   def index
-    @glucose_levels = GlucoseLevel.page(params[:page]).per(10)
+    @q = GlucoseLevel.ransack(params[:q])
+    @glucose_levels = @q.result(:distinct => true).includes(:subject, :meals).page(params[:page]).per(10)
 
     render("glucose_level_templates/index.html.erb")
   end

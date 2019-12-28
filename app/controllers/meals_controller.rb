@@ -1,6 +1,7 @@
 class MealsController < ApplicationController
   def index
-    @meals = Meal.page(params[:page]).per(10)
+    @q = Meal.ransack(params[:q])
+    @meals = @q.result(:distinct => true).includes(:mealtime, :glucoseleve, :insulinunits, :subject).page(params[:page]).per(10)
 
     render("meal_templates/index.html.erb")
   end
