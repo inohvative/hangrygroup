@@ -24,7 +24,7 @@
     </label>
 
     <!-- Input for cohort_id start -->
-    <input type="text" id="cohort_id" name="cohort_id" class="form-control" value="<%= @subject.cohort_id %>">
+    <%= select_tag(:cohort_id, options_from_collection_for_select(DosingCohort.all, :id, :cohort_123, @subject.cohort_id), :class => "form-control") %>
     <!-- Input for cohort_id end -->
   </div>
   <!-- Label and input for cohort_id end -->
