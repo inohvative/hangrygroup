@@ -1,0 +1,102 @@
+<div class="row mb-3">
+  <div class="col-md-12">
+    <h1>
+      All insulin bolus
+    </h1>
+
+    <a href="/insulin_bolus/new" class="btn btn-block btn-outline-secondary">
+      Add a new insulin bolu
+    </a>
+  </div>
+</div>
+
+<!-- Ransack Code start -->
+
+<!-- Ransack Code end -->
+
+<!-- Location Map Code start -->
+
+<!-- Location Map Code end -->
+
+<hr>
+
+<div class="row mb-3">
+  <div class="col-md-12">
+    <table class="table">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          Name
+        </th>
+
+        <th>
+          Amount
+        </th>
+
+        <th>
+          Subject
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @insulin_bolus.each do |insulin_bolu| %>
+      <tr>
+        <!-- Display insulin_bolu.id start -->
+        <td>
+          <%= insulin_bolu.id %>
+        </td>
+        <!-- Display insulin_bolu.id end -->
+
+        <!-- Display insulin_bolu.name start -->
+        <td>
+          <%= insulin_bolu.name %>
+        </td>
+        <!-- Display insulin_bolu.name end -->
+
+        <!-- Display insulin_bolu.amount start -->
+        <td>
+          <%= insulin_bolu.amount %>
+        </td>
+        <!-- Display insulin_bolu.amount end -->
+
+        <!-- Display insulin_bolu.subject_id start -->
+        <td>
+          <%= insulin_bolu.subject_id %>
+        </td>
+        <!-- Display insulin_bolu.subject_id end -->
+
+        <!-- Display insulin_bolu.created_at start -->
+        <td>
+          <%= time_ago_in_words(insulin_bolu.created_at) %> ago
+        </td>
+        <!-- Display insulin_bolu.created_at end -->
+
+        <!-- Display insulin_bolu.updated_at start -->
+        <td>
+          <%= time_ago_in_words(insulin_bolu.updated_at) %> ago
+        </td>
+        <!-- Display insulin_bolu.updated_at end -->
+
+        <td>
+          <a href="/insulin_bolus/<%= insulin_bolu.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

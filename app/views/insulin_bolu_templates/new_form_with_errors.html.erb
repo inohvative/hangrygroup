@@ -1,0 +1,68 @@
+<!-- Validation failure messages -->
+<% if @insulin_bolu.present? %>
+  <% if @insulin_bolu.errors.any? %>
+    <% @insulin_bolu.errors.full_messages.each do |message| %>
+      <div class="alert alert-danger">
+        <%= message %>
+      </div>
+    <% end %>
+  <% end %>
+<% end %>
+
+<h1>
+  Add a new insulin bolu
+</h1>
+
+
+<hr>
+
+<!-- Form insulin_bolu start -->
+<form action="/create_insulin_bolu" method="post">
+<!-- Form insulin_bolu end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <!-- Input for name start -->
+    <input type="text" id="name" name="name" class="form-control" value="<%= @insulin_bolu.name %>">
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <!-- Label and input for amount start -->
+  <div class="form-group">
+    <label for="amount">
+      Amount
+    </label>
+
+    <!-- Input for amount start -->
+    <input type="text" id="amount" name="amount" class="form-control" value="<%= @insulin_bolu.amount %>">
+    <!-- Input for amount end -->
+  </div>
+  <!-- Label and input for amount end -->
+
+  <!-- Label and input for subject_id start -->
+  <div class="form-group">
+    <label for="subject_id">
+      Subject
+    </label>
+
+    <!-- Input for subject_id start -->
+    <input type="text" id="subject_id" name="subject_id" class="form-control" value="<%= @insulin_bolu.subject_id %>">
+    <!-- Input for subject_id end -->
+  </div>
+  <!-- Label and input for subject_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create insulin bolu
+  </button>
+</form>
+
+<hr>
+
+<a href="/insulin_bolus">
+  Go back
+</a>

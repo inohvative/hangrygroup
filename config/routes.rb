@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  # Routes for the Insulin bolu resource:
+
+  # CREATE
+  get("/insulin_bolus/new", { :controller => "insulin_bolus", :action => "new_form" })
+  post("/create_insulin_bolu", { :controller => "insulin_bolus", :action => "create_row" })
+
+  # READ
+  get("/insulin_bolus", { :controller => "insulin_bolus", :action => "index" })
+  get("/insulin_bolus/:id_to_display", { :controller => "insulin_bolus", :action => "show" })
+
+  # UPDATE
+  get("/insulin_bolus/:prefill_with_id/edit", { :controller => "insulin_bolus", :action => "edit_form" })
+  post("/update_insulin_bolu/:id_to_modify", { :controller => "insulin_bolus", :action => "update_row" })
+
+  # DELETE
+  get("/delete_insulin_bolu/:id_to_remove", { :controller => "insulin_bolus", :action => "destroy_row" })
+
+  #------------------------------
+
   # Routes for the Glucose level resource:
 
   # CREATE
