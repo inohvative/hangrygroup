@@ -52,7 +52,7 @@
     </label>
 
     <!-- Input for glucoselevel_id start -->
-    <input type="text" id="glucoselevel_id" name="glucoselevel_id" class="form-control">
+    <%= select_tag(:glucoselevel_id, options_from_collection_for_select(GlucoseLevel.all, :id, :glucose_level, @meal.glucoselevel_id), :class => "form-control") %>
     <!-- Input for glucoselevel_id end -->
   </div>
   <!-- Label and input for glucoselevel_id end -->
