@@ -1,6 +1,6 @@
 class DosingCohortsController < ApplicationController
   def index
-    @dosing_cohorts = DosingCohort.all
+    @dosing_cohorts = DosingCohort.page(params[:page]).per(10)
 
     render("dosing_cohort_templates/index.html.erb")
   end

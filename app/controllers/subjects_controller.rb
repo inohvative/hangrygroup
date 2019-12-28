@@ -1,6 +1,6 @@
 class SubjectsController < ApplicationController
   def index
-    @subjects = Subject.all
+    @subjects = Subject.page(params[:page]).per(10)
 
     render("subject_templates/index.html.erb")
   end

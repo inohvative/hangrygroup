@@ -1,6 +1,6 @@
 class InsulinBolusController < ApplicationController
   def index
-    @insulin_bolus = InsulinBolu.all
+    @insulin_bolus = InsulinBolu.page(params[:page]).per(10)
 
     render("insulin_bolu_templates/index.html.erb")
   end

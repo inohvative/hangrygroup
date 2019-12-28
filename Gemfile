@@ -54,3 +54,5 @@ gem 'activeadmin', '1.2.1'
 gem 'carrierwave'
 gem 'cloudinary'
 gem "rollbar"
+gem "kaminari"
+gem "bootstrap4-kaminari-views"
