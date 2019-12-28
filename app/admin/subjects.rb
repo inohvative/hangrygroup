@@ -1,4 +1,6 @@
 ActiveAdmin.register Subject do
+
+ permit_params :cohort_id, :profilenotes
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
