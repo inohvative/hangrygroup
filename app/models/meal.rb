@@ -13,6 +13,10 @@ class Meal < ApplicationRecord
 
   # Indirect associations
 
+  has_one    :subject,
+             :through => :glucoseleve,
+             :source => :subject
+
   # Validations
 
 end

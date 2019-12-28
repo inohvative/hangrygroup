@@ -12,6 +12,10 @@ class Subject < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :meals,
+             :through => :glucose_levels,
+             :source => :meals
+
   # Validations
 
 end

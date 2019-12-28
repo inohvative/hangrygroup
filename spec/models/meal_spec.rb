@@ -14,6 +14,8 @@ RSpec.describe Meal, type: :model do
 
     describe "InDirect Associations" do
 
+    it { should have_one(:subject) }
+
     end
 
     describe "Validations" do
