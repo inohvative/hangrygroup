@@ -40,7 +40,7 @@
     </label>
 
     <!-- Input for mealtime_id start -->
-    <input type="text" id="mealtime_id" name="mealtime_id" class="form-control">
+    <%= select_tag(:mealtime_id, options_from_collection_for_select(MealTime.all, :id, :name, @meal.mealtime_id), :class => "form-control") %>
     <!-- Input for mealtime_id end -->
   </div>
   <!-- Label and input for mealtime_id end -->
